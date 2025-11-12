@@ -9,7 +9,16 @@ const prisma = new PrismaClient();
 const app = express();
 
 
-app.use(cors());
+const corsOptions = {
+  origin: "https://fullstack-capstone.vercel.app", 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 
