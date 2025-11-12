@@ -68,7 +68,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1>Auth App</h1>
+      <h1>Feedback Flow App</h1>
 
       {view === "signup" && (
         <form onSubmit={handleSignup}>
